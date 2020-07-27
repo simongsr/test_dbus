@@ -8,12 +8,15 @@ public interface Signal extends DBusInterface {
 
     class MySignal extends DBusSignal {
 
-        public MySignal(String source, String path, String iface, String member, String sig, Object... args) throws DBusException {
-            super(source, path, iface, member, sig, args);
+        private final String message;
+
+        public MySignal(String path, String message) throws DBusException {
+            super(path, message);
+            this.message = message;
         }
 
-        protected MySignal(String objectpath, Object... args) throws DBusException {
-            super(objectpath, args);
+        public String getMessage() {
+            return message;
         }
     }
 }

@@ -6,6 +6,6 @@ public class SignalHandler implements DBusSigHandler<Signal.MySignal> {
 
     @Override
     public void handle(Signal.MySignal mySignal) {
-        System.out.println("SIGNAL");
+        System.out.println("SIGNAL: " + mySignal.getMessage());
     }
 }
